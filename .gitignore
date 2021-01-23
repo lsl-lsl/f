@@ -1,0 +1,27 @@
+.DS_Store
+
+# Java class files
+*.class
+*/target/
+target/
+
+# Log Files
+*.log
+logs/*
+application/logs/
+
+# Intellij
+*.iml
+*/*.iml
+
+#some local files
+*/.settings/
+*/.DS_Store
+.DS_Store
+*/.idea/
+.idea/
+/web/*.iml
+/*.iml
+
+#Jrebel
+**/rebel.xml

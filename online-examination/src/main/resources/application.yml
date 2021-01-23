@@ -1,0 +1,34 @@
+server:
+  port: 18080
+spring:
+  application:
+    name: online-examination
+#连接源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://120.25.151.236:3306/online-examination?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-active: 16
+      max-wait: 60000
+#mybatis扫描
+mybatis-plus:
+  mapper-locations: classpath*:**/mapper/*Dao.xml
+  typeAliasesPackage: com.lsl.entity
+  global-config:
+    db-config:
+      id-type: AUTO
+      insert-strategy: NOT_EMPTY
+      update-strategy: NOT_EMPTY
+      select-strategy: NOT_EMPTY
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-null: true
